@@ -37,6 +37,8 @@ var removeNthFromEnd = function (head, n) {
 	}
 };
 
+// TODO: Do this in one pass...
+
 // Input:
 (head = [1, 2, 3, 4, 5]), (n = 2);
 // Output: [1,2,3,5]
