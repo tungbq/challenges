@@ -9,14 +9,33 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
-var middleNode = function (head) {
-	let slow = head;
-	let fast = head;
-
-	while (fast !== null && fast.next !== null) {
-		slow = slow.next;
-		fast = fast.next.next;
+var removeNthFromEnd = function (head, n) {
+	// Calculate length of list
+	let cur_node = head;
+	let length = 1;
+	while (cur_node.next !== null) {
+		cur_node = cur_node.next;
+		length += 1;
 	}
 
-	return slow;
+	// Find index of the previous element of element to be removed
+	const indexToRemove = length - n - 1;
+
+	// Cover case remove the 'head'
+	if (indexToRemove === -1) {
+		head = head.next;
+	} else {
+		// Iterate to update linkedlist
+		cur_node = head;
+		let i = 0;
+		while (cur_node !== null && cur_node.next !== null) {
+			if (i === indexToRemove) {
+				// Remove element
+				cur_node.next = cur_node.next.next;
+			}
+			cur_node = cur_node.next;
+			i++;
+		}
+	}
+	return head;
 };
