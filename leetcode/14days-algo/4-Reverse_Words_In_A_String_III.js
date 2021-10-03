@@ -4,9 +4,10 @@
  */
 var reverseWords = function (s) {
 	let output = '';
-  const s_arr = s.split(' ');
+	const s_arr = s.split(' ');
+	let isFirstElement = true;
+
 	for (var word of s_arr) {
-		const isFirstElement = s_arr.indexOf(word) === 0;
 		word = word.split('');
 		let left = 0;
 		let right = word.length - 1;
@@ -24,6 +25,8 @@ var reverseWords = function (s) {
 		} else {
 			output += ` ${word.join('')}`;
 		}
+
+		isFirstElement = false;
 	}
 
 	return output;
