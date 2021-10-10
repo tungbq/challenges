@@ -3,16 +3,43 @@
  * @param {number} k
  * @return {void} Do not return anything, modify nums in-place instead.
  */
+
 var rotate = function (nums, k) {
-	const new_arr = [];
-	for (let i = 0; i < nums.length; i++) {
-		if (i < k) {
-			new_arr[i] = nums[nums.length - k + i];
-		} else {
-			new_arr[i] = nums[i - k];
-		}
+	k = k % nums.length;
+	if (k === 0) return;
+
+	let left = 0;
+	let right = nums.length - 1;
+	while (left < right) {
+		// Swap left, right
+		tmp = nums[left];
+		nums[left] = nums[right];
+		nums[right] = tmp;
+		left += 1;
+		right -= 1;
 	}
-	return new_arr;
+
+	left = 0;
+	right = k - 1;
+	while (left < right) {
+		// Swap left, right
+		tmp = nums[left];
+		nums[left] = nums[right];
+		nums[right] = tmp;
+		left += 1;
+		right -= 1;
+	}
+
+	left = k;
+	right = nums.length - 1;
+	while (left < right) {
+		// Swap left, right
+		tmp = nums[left];
+		nums[left] = nums[right];
+		nums[right] = tmp;
+		left += 1;
+		right -= 1;
+	}
 };
 
 (nums = [1, 2, 3, 4, 5, 6, 7]), (k = 3);
@@ -24,4 +51,9 @@ var rotate = function (nums, k) {
 
 // nums = [-1,-100,3,99], k = 2
 // Output: [3,99,-1,-100]
-console.log(rotate(nums, k));
+
+// (nums = [-1]), (k = 2);
+// [undefined,-1]
+
+rotate(nums, k);
+console.log(nums);
