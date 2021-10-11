@@ -47,6 +47,7 @@ const dfs = function (image, sr, sc, newColor, rows, cols, source) {
 	(sr = 1),
 	(sc = 1),
 	(newColor = 2);
+// Expected Output: [[2,2,2],[2,2,0],[2,0,1]]
 
 (image = [
 	[0, 0, 0],
@@ -55,8 +56,7 @@ const dfs = function (image, sr, sc, newColor, rows, cols, source) {
 	(sr = 0),
 	(sc = 0),
 	(newColor = 2);
-
-// Expected Output: [[2,2,2],[2,2,0],[2,0,1]]
+// Expected Output: [[2,2,2],[2,2,2]]
 
 console.log(floodFill(image, sr, sc, newColor));
 
