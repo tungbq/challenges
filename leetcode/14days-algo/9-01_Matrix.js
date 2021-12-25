@@ -1,31 +1,13 @@
+// Breadth-First Search / Depth-First Search
+
+// Given an m x n binary matrix mat, return the distance of the nearest 0 for each cell.
+// The distance between two adjacent cells is 1.
+
 /**
  * @param {number[][]} mat
  * @return {number[][]}
  */
-var updateMatrix = function (mat) {
-	for (let i = 0; i < mat.length; i++) {
-		for (let j = 0; j < mat.length; j++) {
-			if (mat[i][j] == 1) {
-				mat[i][j] = dfs(mat, i, j);
-			}
-		}
-	}
-	return mat;
-};
-
-var dfs = function (mat, i, j) {
-	let minLength = 1;
-	if (i < 0 || i >= mat.length || j < 0 || j >= mat[i].length || ) {
-		return minLength;
-	}
-
-  minLength = Math.min(minLength, dfs(mat, i-1, j));
-  minLength = Math.min(minLength, dfs(mat, i+1, j));
-  minLength = Math.min(minLength, dfs(mat, i, j-1));
-  minLength = Math.min(minLength, dfs(mat, i, j+1));
-
-  return minLength
-};
+var updateMatrix = function (mat) {};
 
 mat = [
 	[0, 0, 0],
@@ -33,5 +15,4 @@ mat = [
 	[1, 1, 1],
 ];
 // Output: [[0,0,0],[0,1,0],[1,2,1]]
-
 console.log(updateMatrix(mat));
