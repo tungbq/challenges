@@ -4,7 +4,7 @@
  */
 var hammingWeight = function (n) {
 	let weight = 0;
-	while (n) {
+	while (n > 1) {
 		if (n % 2 == 1) {
 			weight += 1;
 			n = n / 2 - 1;
