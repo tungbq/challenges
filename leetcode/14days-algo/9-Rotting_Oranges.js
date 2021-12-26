@@ -41,10 +41,10 @@ var orangesRotting = function (grid) {
 
 				if (
 					row < 0 ||
-					row >= row_len ||
+					row == row_len ||
 					col < 0 ||
-					col >= col_len ||
-					grid[row][col] != 1
+					col == col_len ||
+					grid[row][col] !== 1
 				) {
 					continue;
 				}
@@ -57,8 +57,8 @@ var orangesRotting = function (grid) {
 				fresh -= 1;
 			}
 		}
-
-		time += 1;
+    
+    time += 1;
 	}
 
 	if (fresh == 0) {
