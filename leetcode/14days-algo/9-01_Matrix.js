@@ -27,7 +27,7 @@ var updateMatrix = function (mat) {
 				let nearestLen = dfs(mat, i, j, visited);
 				row_result.push(nearestLen);
 			} else {
-				results.push(0);
+				row_result.push(0);
 			}
 		}
 		results.push(row_result);
@@ -44,7 +44,7 @@ var dfs = function (mat, i, j, visited = []) {
 		j >= mat[i].length ||
 		visited[i][j]
 	) {
-		return 100000;
+		return Infinity;
 	}
 
 	if (mat[i][j] === 0) {
@@ -70,5 +70,21 @@ mat = [
 	[0, 1, 0],
 	[1, 1, 1],
 ];
+
 // Output: [[0,0,0],[0,1,0],[1,2,1]]
 console.log(updateMatrix(mat));
+
+mat2 = [
+	[1, 1, 0, 0, 1, 0, 0, 1, 1, 0],
+	[1, 0, 0, 1, 0, 1, 1, 1, 1, 1],
+	[1, 1, 1, 0, 0, 1, 1, 1, 1, 0],
+	[0, 1, 1, 1, 0, 1, 1, 1, 1, 1],
+	[0, 0, 1, 1, 1, 1, 1, 1, 1, 0],
+	[1, 1, 1, 1, 1, 1, 0, 1, 1, 1],
+	[0, 1, 1, 1, 1, 1, 1, 0, 0, 1],
+	[1, 1, 1, 1, 1, 0, 0, 1, 1, 1],
+	[0, 1, 0, 1, 1, 0, 1, 1, 1, 1],
+	[1, 1, 1, 0, 1, 0, 1, 1, 1, 1],
+];
+
+console.log(updateMatrix(mat2));
