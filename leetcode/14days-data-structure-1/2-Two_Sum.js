@@ -4,41 +4,23 @@
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-	// sort the array first, O (nlogn)
-	sorted_nums = quicksort(nums);
+	const tracked_nums = {};
 
-	let left = 0;
-	let right = nums.length - 1;
-	var result = [];
-	while (left < right) {
-		if (sorted_nums[left] + sorted_nums[right] === target) {
-			result = [left, right];
-			break;
-		} else if (sorted_nums[left] + sorted_nums[right] > target) {
-			right -= 1;
-		} else {
-			left += 1;
+	for (let i = 0; i < nums.length; i++) {
+		if (nums[i] in tracked_nums) {
+			return [tracked_nums[nums[i]], i];
 		}
+
+		console.log('Loop ' + i + 'times...');
+		const remainder = target - nums[i];
+
+		if (!(remainder in tracked_nums)) {
+			tracked_nums[remainder] = i;
+		}
+
+		console.log(tracked_nums);
 	}
-	return result;
 };
-
-function quicksort(array) {
-	if (array.length <= 1) {
-		return array;
-	}
-
-	var pivot = array[0];
-
-	var left = [];
-	var right = [];
-
-	for (var i = 1; i < array.length; i++) {
-		array[i] < pivot ? left.push(array[i]) : right.push(array[i]);
-	}
-
-	return quicksort(left).concat(pivot, quicksort(right));
-}
 
 // Test case 1:
 (nums = [2, 7, 11, 15]), (target = 9);
