@@ -20,8 +20,9 @@ var merge = function (nums1, m, nums2, n) {
 	}
 
 	while (n > 0) {
-		nums1[last] = nums1[n - 1];
+		nums1[last] = nums2[n - 1];
 		n -= 1;
+		last -= 1;
 	}
 };
 
