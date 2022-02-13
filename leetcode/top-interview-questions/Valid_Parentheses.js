@@ -25,6 +25,7 @@ console.log('-----Output----');
 console.log(isValid(s));
 
 // Test case 2:
+// TODO: Cover this case
 // Input:
 s = '{[]}';
 // Output: true
