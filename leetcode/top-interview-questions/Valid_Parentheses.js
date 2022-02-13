@@ -25,6 +25,8 @@ var isValid = function (s) {
 				return false;
 			}
 		}
+
+		// cover case open brackets > close brackets
 		if (i === s.length - 1 && track_open_elements.length > 0) {
 			return false;
 		}
