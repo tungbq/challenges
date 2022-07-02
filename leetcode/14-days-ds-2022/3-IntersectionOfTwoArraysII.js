@@ -23,6 +23,7 @@ var intersect = function (nums1, nums2) {
 		for (let j = 0; j < nums2.length; j++) {
 			if (nums1[i] == nums2[j] && !is_pushed) {
 				result.push(nums1[i]);
+				nums2.splice(j, 1);
 				is_pushed = true;
 			}
 		}
@@ -30,8 +31,7 @@ var intersect = function (nums1, nums2) {
 	return result;
 };
 
-(nums1 = [4, 9, 5]), (nums2 = [9, 4, 9, 8, 4]);
-
-// (nums1 = [1, 2, 2, 1]), (nums2 = [2, 2]);
+// nums1 = [2, 1];
+// nums2 = [1, 2];
 
 console.log(intersect(nums1, nums2));
