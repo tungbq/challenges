@@ -1,3 +1,3 @@
-# challenges
+# Challenges
 # Leetcode
 - https://leetcode.com/
