@@ -10,13 +10,13 @@ class TestSolution(unittest.TestCase):
 
     def test_merge_different_lengths_word1_longer(self):
         sol = Solution()
-        result = sol.mergeAlternately("abcdef", "12")
-        self.assertEqual(result, "a1b2cdef")
+        result = sol.mergeAlternately("abcd", "pq")
+        self.assertEqual(result, "abqcd")
 
     def test_merge_different_lengths_word2_longer(self):
         sol = Solution()
         result = sol.mergeAlternately("xy", "mnopqr")
-        self.assertEqual(result, "xmynopqr")
+        self.assertEqual(result, "xymnopqr")
 
     def test_merge_empty_strings(self):
         sol = Solution()
