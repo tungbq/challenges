@@ -11,16 +11,26 @@
 class Solution:
     def mergeAlternately(self, word1: str, word2: str) -> str:
       merged_string = None
-      if len(word1) == len(word2) or len(word1) < len(word2):
-        merged_string = word1 + word2
-      else:
-        merged_string = word1[:(len(word2))] + word2 + word1[(len(word2)):]
-        print("Test")
-        print(merged_string)
+      word1_len = len(word1)
+      word2_len = len(word2)
+
+      if word1_len == word2_len:
+        merged_string = self.mergeTwoWords(word1, word2)
+      elif word1_len > word2_len:
+        w1_to_merge = word1[:(word2_len)]
+        w1_remaining = word1[(word2_len):]
+        merged_string = self.mergeTwoWords(w1_to_merge, word2) + w1_remaining
+      elif word1_len < word2_len:
+        w2_to_merge = word2[:(word1_len)]
+        w2_remaining = word2[(word1_len):]
+        merged_string = self.mergeTwoWords(word1, w2_to_merge) + w2_remaining
       return merged_string
 
-    def mergeTwoWord(self, word1: str, word2: str) -> str:
-      w1=list(word1)
-      w2=list(word2)
-      for char in word1:
-        print(char)
+    def mergeTwoWords(self, word1: str, word2: str) -> str:
+      list_w1=list(word1)
+      list_w2=list(word2)
+      merged_words=[]
+      for i in range(len(list_w1)):
+        merged_words.append(list_w1[i])
+        merged_words.append(list_w2[i])
+      return "".join(merged_words)
