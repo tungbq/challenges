@@ -1,3 +1,4 @@
 # Challenges
-# Leetcode
+## Leetcode
+- [leetcode](./leetcode)
 - https://leetcode.com/
