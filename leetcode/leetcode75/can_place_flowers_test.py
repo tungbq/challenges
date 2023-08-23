@@ -1,5 +1,5 @@
 import unittest
-from kids_with_the_greatest_number_of_candies import Solution
+from can_place_flowers import Solution
 
 class TestSolution(unittest.TestCase):
 
