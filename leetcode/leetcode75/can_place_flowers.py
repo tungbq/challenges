@@ -8,17 +8,18 @@ and an integer n, return true if n new flowers can be planted in the flowerbed w
 
 class Solution:
     def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
-      # exit if there is n is empty
+      # early exit if n is empty
       if n == 0:
         return True
       for i in range(len(flowerbed)):
         if flowerbed[i] != 0:
           continue
+        # assuming that the left and the right elements out side of the array is '0' (has no flower): like 0, [0, 1, 0, 1], 0
         if ((i == 0) or (flowerbed[i-1] == 0)) and ((i == (len(flowerbed) - 1)) or (flowerbed[i+1] == 0)):
           # plant here
           flowerbed[i] = 1
           n -= 1
-          # exit if there is n is empty
+          # check and exit if n is empty
           if n == 0:
             return True
       return False
