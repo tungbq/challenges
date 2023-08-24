@@ -8,4 +8,19 @@ by deleting some (can be none) of the characters without disturbing the relative
 
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:
-        pass
+        arr_s=list(s)
+        arr_t=list(t)
+        i, j = 0, 0
+        arr_mid = []
+        while i < len(arr_s) and j < len(arr_t):
+            if arr_s[i] == arr_t[j]:
+                arr_mid.append(arr_s[i])
+                i += 1
+                j += 1
+            else:
+                j += 1
+
+        if arr_mid == arr_s:
+            return True
+        else:
+            return False
