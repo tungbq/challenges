@@ -1,0 +1,19 @@
+name: Leetcode Checker
+
+on:
+  pull_request_target:
+
+jobs:
+  leetcode-checker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - run: |
+          cd leetcode/leetcode75/test
+          # Loop through each .py file and run it using Python
+          for script in *.py; do
+              python "$script"
+          done
