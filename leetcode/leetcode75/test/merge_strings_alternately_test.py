@@ -1,4 +1,6 @@
 import unittest
+import sys
+sys.path.append("..")
 from merge_strings_alternately import Solution
 
 class TestSolution(unittest.TestCase):
