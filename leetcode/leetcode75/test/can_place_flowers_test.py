@@ -1,4 +1,6 @@
 import unittest
+import sys
+sys.path.append("..")
 from can_place_flowers import Solution
 
 class TestSolution(unittest.TestCase):
