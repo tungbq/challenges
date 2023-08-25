@@ -31,6 +31,10 @@ class TestSolution(unittest.TestCase):
         result = sol.isSubsequence("cvbn", "qwryufhhcsffvqfrboiopjehn")
         self.assertEqual(result, True)
 
+    def test_case_6(self):
+        sol = Solution()
+        result = sol.isSubsequence("fqwfhwqiufjwoiqfiwhfihwf", "qwryufhhcsffvqfrbwdfoiopjehn")
+        self.assertEqual(result, False)
 
 if __name__ == '__main__':
     unittest.main()
