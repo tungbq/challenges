@@ -18,7 +18,7 @@ class TestSolution(unittest.TestCase):
 
     def test_case_3(self):
         sol = Solution()
-        result = sol.pivotIndex([2,-1,-1])
+        result = sol.pivotIndex([2,1,-1])
         self.assertEqual(result, 0)
 
 if __name__ == '__main__':

@@ -21,4 +21,22 @@ Right sum = nums[4] + nums[5] = 5 + 6 = 11
 """
 
 class Solution:
-    def pivotIndex(self, nums: list[int]) -> int:
+   def pivotIndex(self, nums):
+      result = -1
+      # Calculate the sum
+      sum = 0
+      for num in nums:
+         sum += num
+
+      # Loop and increase the left sum
+      # Solve proplem using the math
+      # TODO: find more effective way to solve this issue
+      left_sum = 0
+      for index in range(len(nums)):
+         if index != 0:
+            left_sum += nums[index - 1]
+         if ((sum - nums[index]) / 2) == left_sum:
+            result = index
+            break
+
+      return result
