@@ -21,4 +21,4 @@ Right sum = nums[4] + nums[5] = 5 + 6 = 11
 """
 
 class Solution:
-    def pivotIndex(self, nums: List[int]) -> int:
+    def pivotIndex(self, nums: list[int]) -> int:
