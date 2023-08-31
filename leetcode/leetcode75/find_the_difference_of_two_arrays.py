@@ -8,5 +8,13 @@ Note that the integers in the lists may be returned in any order.
 
 class Solution:
     def findDifference(self, nums1, nums2):
-        pass
-        
+        nums1_res = self.baseFindDifference(nums1, nums2)
+        nums2_res = self.baseFindDifference(nums2, nums1)
+        return [nums1_res, nums2_res]
+
+    def baseFindDifference(self, nums1, nums2):
+        result = []
+        for num1 in nums1:
+            if num1 not in nums2 and num1 not in result:
+                result.append(num1)
+        return result
