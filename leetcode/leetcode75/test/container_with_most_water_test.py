@@ -7,13 +7,13 @@ class TestSolution(unittest.TestCase):
 
     def test_case_1(self):
         sol = Solution()
-        result = sol.canPlaceFlowers([1,8,6,2,5,4,8,3,7])
+        result = sol.maxArea([1,8,6,2,5,4,8,3,7])
         self.assertEqual(result, 49)
 
     def test_case_2(self):
         sol = Solution()
-        result = sol.canPlaceFlowers([1,1])
-        self.assertEqual(result,1)
+        result = sol.maxArea([1,1])
+        self.assertEqual(result, 1)
 
 if __name__ == '__main__':
     unittest.main()

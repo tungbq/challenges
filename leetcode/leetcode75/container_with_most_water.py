@@ -18,5 +18,15 @@ In this case, the max area of water (blue section) the container can contain is 
 """
 
 class Solution:
-    def maxArea(self, height: list[int]) -> int:
-      pass
+    def maxArea(self, height):
+      left, right = 0, len(height) - 1
+      maxArea = 1
+      while left < right:
+        square = min(height[left], height[right]) * (right - left)
+        if square > maxArea:
+          maxArea = square
+        if height[left] < height[right]:
+          left += 1
+        else:
+          right -= 1
+      return maxArea
