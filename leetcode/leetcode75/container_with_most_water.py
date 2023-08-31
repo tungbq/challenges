@@ -20,7 +20,7 @@ In this case, the max area of water (blue section) the container can contain is 
 class Solution:
     def maxArea(self, height):
       left, right = 0, len(height) - 1
-      maxArea = 1
+      maxArea = 0
       while left < right:
         square = min(height[left], height[right]) * (right - left)
         if square > maxArea:

@@ -15,5 +15,10 @@ class TestSolution(unittest.TestCase):
         result = sol.maxArea([1,1])
         self.assertEqual(result, 1)
 
+    def test_case_3(self):
+        sol = Solution()
+        result = sol.maxArea([0,2])
+        self.assertEqual(result, 0)
+
 if __name__ == '__main__':
     unittest.main()
