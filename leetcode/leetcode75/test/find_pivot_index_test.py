@@ -21,5 +21,10 @@ class TestSolution(unittest.TestCase):
         result = sol.pivotIndex([2,1,-1])
         self.assertEqual(result, 0)
 
+    def test_case_4(self):
+        sol = Solution()
+        result = sol.pivotIndex([0])
+        self.assertEqual(result, 0)
+
 if __name__ == '__main__':
     unittest.main()
