@@ -17,12 +17,20 @@ Output: 5.00000
 
 class Solution:
     def findMaxAverage(self, nums, k):
-        sum_k = 0
-        for i in range(k):
-          sum_k += nums[i]
-        for i in range(k, len(nums)):
-          # slicing approach
-          cur_sum = sum_k + nums[i] - nums[i - k]
-          if cur_sum > sum_k:
-             sum_k = cur_sum
-        return sum_k / k
+        cur_sum = 0
+        result = float('-inf')
+        print("===")
+        print(len(nums))
+        print(k)
+        for i in range(len(nums)):
+          # init the sum
+          if i < k:
+            cur_sum += nums[i]
+            if (i == (k-1)):
+              result = cur_sum
+          else:
+            # slicing approach
+            cur_sum += nums[i] - nums[i - k]
+          if cur_sum > result:
+            result = cur_sum
+        return result / k
