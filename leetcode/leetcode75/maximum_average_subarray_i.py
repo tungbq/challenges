@@ -19,9 +19,7 @@ class Solution:
     def findMaxAverage(self, nums, k):
         cur_sum = 0
         result = float('-inf')
-        print("===")
-        print(len(nums))
-        print(k)
+
         for i in range(len(nums)):
           # init the sum
           if i < k:
