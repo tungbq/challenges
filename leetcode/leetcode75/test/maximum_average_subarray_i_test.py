@@ -50,7 +50,7 @@ class TestSolution(unittest.TestCase):
                                      -4200,7271,-6920,-1886,662,
                                      7844,3658,-6562,-2106,-296,
                                      -3280,8909,-8352,-9413,3513,1352,-8825], 90)
-        self.assertEqual(result, 37.25556)
+        self.assertEqual(result, 37.25555555555555)
 
     def test_case_7(self):
         sol = Solution()
