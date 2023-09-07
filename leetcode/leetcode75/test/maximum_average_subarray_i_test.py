@@ -20,5 +20,15 @@ class TestSolution(unittest.TestCase):
         result = sol.findMaxAverage([1,12,-5,-6,50,3,100,200], 5)
         self.assertEqual(result, 69.4000)
 
+    def test_case_4(self):
+        sol = Solution()
+        result = sol.findMaxAverage([0,4,0,3,2], 1)
+        self.assertEqual(result, 4)
+
+    def test_case_5(self):
+        sol = Solution()
+        result = sol.findMaxAverage([-1], 1)
+        self.assertEqual(result, -1)
+
 if __name__ == '__main__':
     unittest.main()
