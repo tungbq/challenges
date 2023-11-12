@@ -15,5 +15,6 @@ jobs:
           cd leetcode/leetcode75/test
           # Loop through each .py file and run it using Python
           for script in *.py; do
+              echo "Running test script: $script"
               python "$script"
           done
