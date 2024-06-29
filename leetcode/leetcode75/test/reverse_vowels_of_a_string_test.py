@@ -15,10 +15,15 @@ class TestSolution(unittest.TestCase):
         result = sol.reverseVowels("hello")
         self.assertEqual(result, "holle")
 
-    def test_case_2(self):
+    def test_case_3(self):
         sol = Solution()
         result = sol.reverseVowels("aA")
         self.assertEqual(result, "Aa")
+
+    def test_case_4(self):
+        sol = Solution()
+        result = sol.reverseVowels("aeezAE")
+        self.assertEqual(result, "EAezea")
 
 if __name__ == '__main__':
     unittest.main()
