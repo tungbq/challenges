@@ -6,7 +6,7 @@ The vowels are 'a', 'e', 'i', 'o', and 'u', and they can appear in both lower an
 class Solution:
     def reverseVowels(self, s: str) -> str:
         result=""
-        vowels = ['a', 'e', 'i', 'o', 'u']
+        vowels = ['a', 'A' , 'e', 'E', 'i', 'I', 'o', 'O', 'u', 'U']
         # convert string to array
         str_arr = [c for c in s]
         str_arr_sort = [c for c in s]
