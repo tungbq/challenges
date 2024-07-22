@@ -14,3 +14,7 @@
 ## Cheatsheet
 
 - [LeetCode Cheatsheet](https://leetcode.com/explore/interview/card/cheatsheets/)
+
+## Common problems
+
+- [Common problems](./docs/common-algo.md)
