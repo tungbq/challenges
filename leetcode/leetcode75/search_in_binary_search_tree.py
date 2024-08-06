@@ -28,19 +28,15 @@ class TreeNode:
 class Solution:
     def searchBST(self, root: TreeNode, val: int) -> TreeNode:
         if not root:
-            return None
+            return
         if root.val == val:
-            # Do search and return subtree
             return root
-        # Continue search the left
-        result = self.searchBST(root.left, val)
-        if result is not None:
-            return result
-        # Continue searching the right
-        result = self.searchBST(root.right, val)
-        if result is not None:
-            return result
-        return None
+        if root.val > val:
+            # Continue search the left
+            return self.searchBST(root.left, val)
+        elif root.val < val:
+            # Continue searching the right
+            return self.searchBST(root.right, val)           
 
 
 # TODO: optimize
