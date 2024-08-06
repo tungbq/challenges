@@ -18,7 +18,7 @@ def bfs(root):
     result = []
     
     while queue:
-        # Pop the node from the front of the queue. Take 0(1) time
+        # Pop the node from the front of the queue
         current_node = queue.popleft()
         # Append the current node's value to the result list
         result.append(current_node.value)
