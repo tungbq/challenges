@@ -41,3 +41,6 @@ class Solution:
 
 # TODO: optimize
 # 68ms |  6.71%
+
+# Optimized:
+# 55ms | 58.19%
