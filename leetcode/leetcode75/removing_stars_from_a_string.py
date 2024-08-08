@@ -29,6 +29,8 @@ Output: ""
 Explanation: The entire string is removed, so we return an empty string.
 """
 
+# Type: Stack
+
 class Solution:
     def removeStars(self, s: str) -> str:
         stack = []
