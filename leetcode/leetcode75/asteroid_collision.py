@@ -23,32 +23,26 @@ class Solution:
         stack = []
 
         for element in asteroids:
-            print(f"stack: {stack}")
-            
-            if not stack:
-                stack.append(element)
-                continue
-            is_collided = self.check_is_collided(stack[len(stack) - 1], element)
-            if not is_collided:
-                stack.append(element)
-                continue
+            stack.append(element)
+            if len(stack) == 1:
+              continue
+
             # Now check collide
-            while True:
+            while len(stack) > 1 and (stack[-2] > 0) and (stack[-1]) < 0:
                 # collide and ..
-                if abs(element) < stack[len(stack) -1]:
+                if abs(stack[-1]) < abs(stack[-2]):
+                    # Remove the element
+                    stack.pop()
                     break
-                elif abs(element) == stack[len(stack) -1]:
+                elif abs(stack[-1]) == abs(stack[-2]):
+                    # Remove both
+                    stack.pop()
                     stack.pop()
                     break
                 else:
+                    # [a, a2+, -a3]. Remove a2+, add a3-
+                    current_last = stack[-1]
                     stack.pop()
-                    if not stack:
-                        stack.append(element)
-                        break
+                    stack.pop()
+                    stack.append(current_last)
         return stack
-
-    def check_is_collided(self, current, next):
-        # current +: -> AND next -: <- => Collide
-        if (current > 0 and next < 0):
-          return True
-        return False
