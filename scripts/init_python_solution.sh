@@ -23,6 +23,10 @@ echo "import unittest" >> $TEST_SCRIPT_NAME
 echo "import sys" >> $TEST_SCRIPT_NAME
 echo "sys.path.append(\"..\")" >> $TEST_SCRIPT_NAME
 echo "from ${SCRIPT_NAME_IN_UNDERSCORE} import Solution" >> $TEST_SCRIPT_NAME
+echo "class TestSolution(unittest.TestCase):" >> $TEST_SCRIPT_NAME
+echo "    def test_case_1(self):" >> $TEST_SCRIPT_NAME
+echo "        sol = Solution()" >> $TEST_SCRIPT_NAME
+echo "        # TODO" >> $TEST_SCRIPT_NAME
 
 ls -la
 cat $TEST_SCRIPT_NAME
