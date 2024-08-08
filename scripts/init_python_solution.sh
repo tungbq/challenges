@@ -28,5 +28,10 @@ echo "    def test_case_1(self):" >> $TEST_SCRIPT_NAME
 echo "        sol = Solution()" >> $TEST_SCRIPT_NAME
 echo "        # TODO" >> $TEST_SCRIPT_NAME
 
+echo "" >> $TEST_SCRIPT_NAME
+
+echo "if __name__ == '__main__':" >> $TEST_SCRIPT_NAME
+echo "    unittest.main()" >> $TEST_SCRIPT_NAME
+
 ls -la
 cat $TEST_SCRIPT_NAME
