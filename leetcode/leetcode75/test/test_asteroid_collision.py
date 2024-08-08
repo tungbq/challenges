@@ -39,5 +39,11 @@ class TestSolution(unittest.TestCase):
         expected = [-30,1,2,3]
         self.assertEqual(sol.asteroidCollision(asteroids), expected)
 
+    def test_case_7(self):
+        sol = Solution()
+        asteroids = [-2,-2,1,-2]
+        expected = [-2,-2,-2]
+        self.assertEqual(sol.asteroidCollision(asteroids), expected)
+
 if __name__ == '__main__':
     unittest.main()
